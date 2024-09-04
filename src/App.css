@@ -1,0 +1,74 @@
+#root {
+  width: 100%;
+  height: 200vh;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: 212121;
+  background-color: rgb(255, 255, 255);
+}
+
+#logoIf{
+  width: 200px;
+}
+
+.headerConteiner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #212121;
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: gray;
+}
+.conteinerLinks
+{
+  display: flex;
+  gap: 50px;
+  font-size: 20px;
+}
+
+
+.conteinerCards
+{
+  display: flex;
+  width: 100%;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.conteinerDescricao{
+  color: #212121;
+}
+
+h2{
+  color:#212121;
+}
+
+input{
+  border-radius: 15px;
+  background-color: rgb(202, 202, 202);
+  color: #212121;
+  font-size: 20px;
+  padding: 10px;
+}
+
+
+.conteinerEstudantes
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #212121;
+  height: auto;
+  font-size: 20px;
+}

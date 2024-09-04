@@ -1,0 +1,62 @@
+import { useState } from 'react'
+import './App.css'
+import AdicionarCard from './componentes/AdicionarCard.jsx'
+import Cards from './componentes/Cards.jsx'
+
+
+function App() {
+  const[estudantes,setEstudantes] = useState([])
+
+  const addEstudantes = (estudante) =>{
+    setEstudantes([...estudantes,estudante]);
+  }
+
+  const ExcluirEstudante = (nome) =>
+    {
+        const alunoRemover = estudantes.find(estudante => estudante.nome == nome)
+        if(alunoRemover)
+        {
+            setEstudantes(estudantes.filter(estudante => estudante.nome != nome))
+        }else{
+            alert("Não foi possível encontrar este aluno!");
+        }
+
+  }
+
+  return (
+    <>
+      <header className='headerConteiner'>
+        <div>
+          <a href="https://ifrs.edu.br/osorio/"><img id='logoIf' src="https://ifrs.edu.br/wp-content/uploads/2022/08/Logo-IFRS-cores-sem-fundo-Vertical.png"  alt="" /></a>
+          
+        </div>
+        <div className='conteinerLinks'>
+          <a href="https://ifrs.edu.br/osorio/">Home</a>
+          <a href="">Outras atividades</a>
+          <a href="https://react.dev/reference/react">React</a>
+        </div>
+      </header>
+
+      <div>
+        <div className='conteinerDescricao'>
+          <h1>Bem Vindo ao registro de estudantes</h1>
+            <h2>Adicione estudantes ao sistema através do formulário abaixo:</h2>
+        </div>
+
+        <div className='conteinerCards'>
+          <AdicionarCard AddEstudante={addEstudantes}></AdicionarCard>
+        </div>
+
+        <div className='conteinerEstudantes'>
+          <div>
+            <h2>Alunos adicionados:</h2>
+          </div>
+            <Cards estudantes={estudantes} FunctionExcluir={ExcluirEstudante}></Cards>
+        </div>
+      </div>
+     
+    </>
+  )
+}
+
+export default App
