@@ -11,12 +11,12 @@ function App() {
     setEstudantes([...estudantes,estudante]);
   }
 
-  const ExcluirEstudante = (nome) =>
+  const ExcluirEstudante = (id) =>
     {
-        const alunoRemover = estudantes.find(estudante => estudante.nome == nome)
+        const alunoRemover = estudantes.find(estudante => estudante.id == id)
         if(alunoRemover)
         {
-            setEstudantes(estudantes.filter(estudante => estudante.nome != nome))
+            setEstudantes(estudantes.filter(estudante => estudante.id != id))
         }else{
             alert("Não foi possível encontrar este aluno!");
         }

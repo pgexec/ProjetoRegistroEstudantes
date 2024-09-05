@@ -14,8 +14,9 @@ function AdicionarCard ({AddEstudante})
     const handleDescricaoOnChange = (e) =>{
         setDescricao(e.target.value);
     }
+    
     const createEstudante = (nome,descricao) =>{
-        const novoEstudante  = {nome: nome, descricao: descricao}
+        const novoEstudante  = {nome: nome, descricao: descricao, id:0}
         AddEstudante(novoEstudante);
         
     }
