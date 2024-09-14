@@ -6,7 +6,7 @@ function AdicionarCard ({AddEstudante})
 {
     const [nome,setNome] = useState("");
     const [descricao,setDescricao] = useState("");
-    const [select,setSelect] = useState([
+    const select = [
         {
             sigla: "ADS",
             nome: "Analise Desenvolvimento de Sistema"
@@ -23,7 +23,7 @@ function AdicionarCard ({AddEstudante})
             sigla:"LL",
             nome:"Licenciatura em Letras"
         }
-    ])
+    ]
 
     const [cursoSelecionado, SetCursoSelecionado] = useState("");
 
@@ -38,15 +38,9 @@ function AdicionarCard ({AddEstudante})
     const handleSelectCurso = (sigla) =>{
         console.log(sigla);
         SetCursoSelecionado(sigla);
-    }
-
-    const [SelectedClass,setSelectedClass] = useState("optionsCurso");
-
-    const SelectedActive = () =>{
-
-        setSelectedClass("optionCursoActive");
-    }
     
+    }
+   
     const createEstudante = (nome,descricao,curso) =>{
         const novoEstudante  = {nome: nome, descricao: descricao, id:0,curso:curso}
         AddEstudante(novoEstudante);
@@ -58,7 +52,7 @@ function AdicionarCard ({AddEstudante})
         <div className="conteinerFormu">
             <div className="selectConteiner">
                 {select.map((selects,index) => (
-                    <li onClick={() => {handleSelectCurso(selects.nome); SelectedActive} } className={SelectedClass} key={index}>{selects.sigla}{index}</li>
+                    <li onClick={() => {handleSelectCurso(selects.nome); }} className={selects.nome == cursoSelecionado ? "optionCursoActive" : "optionsCurso"}  key={index}>{selects.sigla}</li>
                 ))}
             </div>
             <div className="conteinerInputs">
