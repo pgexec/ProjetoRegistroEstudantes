@@ -31,18 +31,19 @@ function App() {
           
         </div>
         <div className='conteinerLinks'>
-          <a href="https://ifrs.edu.br/osorio/">Home</a>
-          <a href="">Outras atividades</a>
-          <a href="https://react.dev/reference/react">React</a>
+          <a className="links"href="https://ifrs.edu.br/osorio/">Home</a>
+          <a className="links" href="">Outras atividades</a>
+          <a className="links" href="https://react.dev/reference/react">React</a>
         </div>
       </header>
 
-      <div>
+      <div className='conteinerMain'>
         <div className='conteinerDescricao'>
           <h1>Bem Vindo ao registro de estudantes</h1>
             <h2>Adicione estudantes ao sistema através do formulário abaixo:</h2>
+            <hr/>
         </div>
-
+        
         <div className='conteinerCards'>
           <AdicionarCard AddEstudante={addEstudantes}></AdicionarCard>
         </div>

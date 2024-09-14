@@ -1,6 +1,7 @@
 
 import Card from './Card'
 import PropTypes from 'prop-types';
+import "../Style/Cards.css"
 
 
 function Cards({estudantes, FunctionExcluir})
@@ -13,10 +14,10 @@ function Cards({estudantes, FunctionExcluir})
     }
 
     return(
-        <div>
+        <div className='conteinerShowCards'>
             {estudantes && estudantes.length > 0 ? (estudantes.map((estudante,index) =>(
                       
-                    <Card key={index} nome={estudante.nome} descricao = {estudante.descricao} id={adicionaIdEstudante(index)} ExcluirEstudante={FunctionExcluir}></Card>
+                    <Card key={index} nome={estudante.nome} descricao = {estudante.descricao} id={adicionaIdEstudante(index)} curso= {estudante.curso}ExcluirEstudante={FunctionExcluir}></Card>
                 )
                 )) : ("Não tem estudante")}  
         </div>

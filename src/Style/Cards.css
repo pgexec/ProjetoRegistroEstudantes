@@ -8,12 +8,32 @@
     padding: 15px;
     margin: 10px;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: auto;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-shadow: 20px 18px 9px -15px rgba(163,161,163,1);
+    -moz-box-shadow: 20px 18px 9px -15px rgba(163,161,163,1);
+    box-shadow: 20px 18px 9px -15px rgba(163,161,163,1);
 }
 
 .ImgConteiner{
     background-color: aliceblue;
-    border-radius: 15px;
+    border-radius: 50px;
     margin: 20px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    overflow: hidden;
+}
+
+
+p{
+    margin: 0px;
 }
 
 .infoConteiner{
@@ -21,26 +41,55 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: auto;
     gap: 10px;
     font-size: 15px;
-    padding: 10px;  
+    padding: 20px;  
 }
 
 #descricao{
     font-weight: 500;
 }
 
-img{
-    width: 300px;
+.imgPerson{
+    width: 200px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .MainConteinerInfo{
     background-color: #eff8ff;
     border-radius: 15px;
     margin: 20px;
+    width: 80%;
+    height: 20%;
 }
 
 label{
     font-weight: bolder;
     font-size: 24px;
+}
+
+
+.conteinerShowCards{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.divButtonClose{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.buttonGeneric:hover{
+    background-color: white;
+    transition: all 1000ms;
+    border: #212121 solid 2px;
+    color: #212121;
 }

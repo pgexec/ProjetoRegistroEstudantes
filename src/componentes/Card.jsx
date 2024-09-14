@@ -3,27 +3,30 @@ import PropTypes from 'prop-types';
 import imgIcon from '../assets/male.png'
 import '../Style/Cards.css'
 
-function Card({nome,descricao, id,ExcluirEstudante}){
+function Card({nome,descricao, id,curso,ExcluirEstudante}){
 
     return(
         <div className='CardConteiner'>
-            <button onClick={() => ExcluirEstudante(id)}>close</button>
+            <div className='divButtonClose'>
+                <button className='buttonGeneric' onClick={() => ExcluirEstudante(id)}>X</button>
+            </div>
             <div className='ImgConteiner'>
-                <img src={imgIcon} alt="" />
+                <img className='imgPerson' src={imgIcon} alt="" />
             </div>
             <div className='MainConteinerInfo'>
                 <div className='infoConteiner'>
                     <label htmlFor="">Nome:</label>
-                    <h2>{id}</h2>
-                    <h2>{nome}</h2>
+                    <p>{nome}</p>
                 </div>
                 <div className='infoConteiner'>
                     <label htmlFor="">Descrição:</label>
-                    <h2 id='descricao'>{descricao}</h2>
+                    <p id='descricao'>{descricao}</p>
                 </div>
-            </div>
-            
-            
+                <div className='infoConteiner'>
+                    <label htmlFor="">Curso:</label>
+                    <p id='descricao'>{curso}</p>
+                </div>
+            </div> 
         </div>
     )
 }
@@ -33,7 +36,8 @@ Card.propTypes =
     nome: PropTypes.string.isRequired,
     descricao: PropTypes.string.isRequired,
     ExcluirEstudante: PropTypes.func.isRequired,
-    id:PropTypes.number.isRequired
+    id:PropTypes.number.isRequired,
+    curso:PropTypes.string.isRequired,
 }
 
 export default Card

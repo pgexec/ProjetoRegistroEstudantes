@@ -9,19 +9,64 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 20vh;
+    height: auto;
     width: 100%;
-    gap: 50px;
+    gap: 20px;
+    padding: 10px;
+    margin: 10px;
 }
 
 .conteinerInputs{
     display: flex;
     gap: 20px;
 }
-
+hr{
+    width: 50%;
+    border: #d3d2d2 solid 1px;
+}
 .conteinerButton{
     width:5%;
     background-color: antiquewhite;
     display: FLEX;
     justify-content: flex-start;
+}
+
+
+.selectConteiner{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+    width: 50%;
+    height: auto;
+    gap: 20px;
+    padding: 30px;
+    color: #212121;
+}
+
+.optionsCurso{
+    background-color: #212121;
+    border-radius: 10px;
+    padding: 15px;
+    list-style-type: none;
+    color: whitesmoke;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.optionsCurso:hover{
+    background-color: white;
+    padding: 15px;
+    transition: all 1000ms;
+    list-style-type: none;
+    color: #212121;
+    border: #212121 solid 2px;
+}
+
+.optionCursoActive{
+    background-color: white;
+    color: #212121;
+    border: #212121 solid 2px;
 }
