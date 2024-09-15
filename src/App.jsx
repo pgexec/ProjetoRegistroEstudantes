@@ -45,14 +45,7 @@ function App() {
         </div>
         
         <div className='conteinerCards'>
-          <AdicionarCard AddEstudante={addEstudantes}></AdicionarCard>
-        </div>
-
-        <div className='conteinerEstudantes'>
-          <div>
-            <h2>Alunos adicionados:</h2>
-          </div>
-            <Cards estudantes={estudantes} FunctionExcluir={ExcluirEstudante}></Cards>
+          <AdicionarCard AddEstudante={addEstudantes} estudantes={estudantes} ExcluirEstudante={ExcluirEstudante}></AdicionarCard>
         </div>
       </div>
      

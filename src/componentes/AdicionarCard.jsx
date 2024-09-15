@@ -1,8 +1,9 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
 import '../Style/AdicionarCard.css';
+import Cards from './Cards'
 
-function AdicionarCard ({AddEstudante})
+function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
 {
     const [nome,setNome] = useState("");
     const [descricao,setDescricao] = useState("");
@@ -55,6 +56,15 @@ function AdicionarCard ({AddEstudante})
                     <li onClick={() => {handleSelectCurso(selects.nome); }} className={selects.nome == cursoSelecionado ? "optionCursoActive" : "optionsCurso"}  key={index}>{selects.sigla}</li>
                 ))}
             </div>
+            {estudantes.filter(estudante => estudante.curso == cursoSelecionado).length > 0 ? 
+            <div className='conteinerEstudantes'>
+                <div>
+                    <h2>Alunos adicionados:</h2>
+                </div>
+                    <Cards estudantes={estudantes.filter(estudante => estudante.curso == cursoSelecionado)} FunctionExcluir={ExcluirEstudante}></Cards>
+            </div> : null}
+                
+
             <div className="conteinerInputs">
                 <label htmlFor="">Nome:</label>
                 <input type="text" onChange={handleNomeOnChange}/>
