@@ -11,14 +11,15 @@
     flex-direction: column;
     height: auto;
     width: 100%;
-    gap: 20px;
+    gap: 50px;
     padding: 10px;
-    margin: 10px;
 }
 
 .conteinerInputs{
     display: flex;
     gap: 20px;
+    text-align: center;
+    align-items: center;
 }
 hr{
     width: 50%;

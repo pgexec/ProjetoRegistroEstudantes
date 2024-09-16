@@ -2,7 +2,6 @@
 import Card from './Card'
 import PropTypes from 'prop-types';
 import "../Style/Cards.css"
-import { v4 as uuidv4 } from 'uuid';
 
 function Cards({estudantes, FunctionExcluir})
 {

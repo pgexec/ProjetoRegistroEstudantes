@@ -8,7 +8,7 @@ function Card({nome,descricao, id,curso,ExcluirEstudante}){
     return(
         <div className='CardConteiner'>
             <div className='divButtonClose'>
-                <button className='buttonGeneric' onClick={() => ExcluirEstudante(id)}>X</button>
+                <button className='buttonClose' onClick={() => ExcluirEstudante(id)} >x</button>
             </div>
             <div className='ImgConteiner'>
                 <img className='imgPerson' src={imgIcon} alt="" />
@@ -17,6 +17,7 @@ function Card({nome,descricao, id,curso,ExcluirEstudante}){
                 <div className='infoConteiner'>
                     <label htmlFor="">Nome:</label>
                     <p>{nome}</p>
+
                 </div>
                 <div className='infoConteiner'>
                     <label htmlFor="">Descrição:</label>

@@ -63,7 +63,7 @@ function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
                     <h2>Alunos adicionados:</h2>
                 </div>
                     <Cards estudantes={estudantes.filter(estudante => estudante.curso == cursoSelecionado)}  FunctionExcluir={ExcluirEstudante}></Cards>
-            </div> : null}
+            </div> : "Não tem Alunos"}
                 
 
             <div className="conteinerInputs">

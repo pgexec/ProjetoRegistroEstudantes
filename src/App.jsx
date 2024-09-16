@@ -24,7 +24,7 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <header className='headerConteiner'>
         <div>
           <a href="https://ifrs.edu.br/osorio/"><img id='logoIf' src="https://ifrs.edu.br/wp-content/uploads/2022/08/Logo-IFRS-cores-sem-fundo-Vertical.png"  alt="" /></a>
@@ -49,7 +49,7 @@ function App() {
         </div>
       </div>
      
-    </>
+    </div>
   )
 }
 
