@@ -59,6 +59,17 @@ function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
         }
     }
 
+    const [showRegister, SetShowRegister] = useState(false)
+
+    const showRegisterConcluido = (resposta) =>{
+        SetShowRegister(resposta);
+        if(resposta){
+            setTimeout(() => {
+                SetShowRegister(false);
+            },2000)
+        }
+    }
+
     return(
 
         <div className="conteinerFormu">
@@ -82,13 +93,15 @@ function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
                 <label htmlFor="">Descrição:</label>
                 <input type="text" onChange={handleDescricaoOnChange}/>
                 {nome != "" && descricao != "" && cursoSelecionado != "" ? 
-                    <button className="buttonGeneric" onClick={() => createEstudante(nome,descricao,cursoSelecionado)}>Registrar</button> :
                     <div>
-                        <button className="buttonGeneric" onClick={() =>showErroFunction(true) }>Registrar</button>    
-                        {showErro ? <Message></Message> : null}
+                        <button className="buttonGeneric" onClick={() => {createEstudante(nome,descricao,cursoSelecionado); showRegisterConcluido(true);}}>Registrar</button>
+                        {showRegister ? <Message className="MessageRegister">Registrado com sucesso</Message> : null}
+                    </div>:
+                    <div>
+                        <button className="buttonGeneric" onClick={() =>showErroFunction(true)}>Registrar</button>    
+                        {showErro ? <Message className="MessageErro" >Erro falta alguma identificação a preencher!</Message> : null}
                     </div>
-                }
-                
+                }     
             </div>                   
         </div>
     )  

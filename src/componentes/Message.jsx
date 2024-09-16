@@ -1,14 +1,11 @@
 
 import '../Style/Message.css'
 
-function Message()
+function Message({children,...props})
 {
-
-    
-
     return(
-        <div className="Message">
-            <h4>Registro invalido falta alguma identificação</h4>
+        <div {...props}>
+            <h4>{children}</h4>
         </div>
     )
 }
