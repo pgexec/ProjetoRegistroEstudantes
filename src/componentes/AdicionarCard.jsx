@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from 'prop-types';
 import '../Style/AdicionarCard.css';
 import Cards from './Cards'
+import { v4 as uuidv4 } from 'uuid';
 
 function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
 {
@@ -43,7 +44,7 @@ function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
     }
    
     const createEstudante = (nome,descricao,curso) =>{
-        const novoEstudante  = {nome: nome, descricao: descricao, id:0,curso:curso}
+        const novoEstudante  = {nome: nome, descricao: descricao, id:uuidv4(),curso:curso}
         AddEstudante(novoEstudante);
         
     }
@@ -79,6 +80,8 @@ function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
 AdicionarCard.propTypes = {
         
     AddEstudante: PropTypes.func.isRequired,
+    estudantes: PropTypes.array.isRequired,
+    ExcluirEstudante: PropTypes.func.isRequired
 };
 
 export default AdicionarCard;

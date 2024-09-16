@@ -7,17 +7,12 @@ import "../Style/Cards.css"
 function Cards({estudantes, FunctionExcluir})
 {
 
-    const adicionaIdEstudante = (index) =>{
-
-      estudantes[index].id = index
-      return estudantes[index].id
-    }
 
     return(
         <div className='conteinerShowCards'>
             {estudantes && estudantes.length > 0 ? (estudantes.map((estudante,index) =>(
                       
-                    <Card key={index} nome={estudante.nome} descricao = {estudante.descricao} id={adicionaIdEstudante(index)} curso= {estudante.curso}ExcluirEstudante={FunctionExcluir}></Card>
+                    <Card key={index} nome={estudante.nome} descricao = {estudante.descricao}  curso= {estudante.curso}ExcluirEstudante={FunctionExcluir}></Card>
                 )
                 )) : ("Não tem estudante")}  
         </div>

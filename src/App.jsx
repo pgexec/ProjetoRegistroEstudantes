@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import AdicionarCard from './componentes/AdicionarCard.jsx'
-import Cards from './componentes/Cards.jsx'
+
 
 
 function App() {
