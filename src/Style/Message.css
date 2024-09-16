@@ -1,0 +1,16 @@
+
+
+
+.Message{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    background-color: rgb(221, 2, 2);
+    padding: 10px; 
+    font-size: 10px;
+    border-radius: 15px;
+    margin: 20px;
+    transition: all 500ms;
+}
+

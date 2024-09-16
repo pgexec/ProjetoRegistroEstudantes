@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../Style/AdicionarCard.css';
 import Cards from './Cards'
 import { v4 as uuidv4 } from 'uuid';
+import Message from "./Message";
 
 function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
 {
@@ -40,13 +41,22 @@ function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
     const handleSelectCurso = (sigla) =>{
         console.log(sigla);
         SetCursoSelecionado(sigla);
-    
     }
    
     const createEstudante = (nome,descricao,curso) =>{
         const novoEstudante  = {nome: nome, descricao: descricao, id:uuidv4(),curso:curso}
-        AddEstudante(novoEstudante);
-        
+        AddEstudante(novoEstudante);           
+    }
+
+    const [showErro, setShowErro] = useState(false)
+
+    const showErroFunction = (resposta) =>{
+        setShowErro(resposta);
+        if (resposta) {
+            setTimeout(() => {
+                setShowErro(false);
+            }, 2000); // 3 segundos
+        }
     }
 
     return(
@@ -71,7 +81,14 @@ function AdicionarCard ({AddEstudante, estudantes, ExcluirEstudante})
                 <input type="text" onChange={handleNomeOnChange}/>
                 <label htmlFor="">Descrição:</label>
                 <input type="text" onChange={handleDescricaoOnChange}/>
-                <button className="buttonGeneric" onClick={() => createEstudante(nome,descricao,cursoSelecionado)}>Registrar</button>
+                {nome != "" && descricao != "" && cursoSelecionado != "" ? 
+                    <button className="buttonGeneric" onClick={() => createEstudante(nome,descricao,cursoSelecionado)}>Registrar</button> :
+                    <div>
+                        <button className="buttonGeneric" onClick={() =>showErroFunction(true) }>Registrar</button>    
+                        {showErro ? <Message></Message> : null}
+                    </div>
+                }
+                
             </div>                   
         </div>
     )  

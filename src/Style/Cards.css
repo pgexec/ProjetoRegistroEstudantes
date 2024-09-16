@@ -3,7 +3,7 @@
 
 .CardConteiner{
 
-    background-color: #6e6d6d;
+    background-color: #5c5b59;
     border-radius: 15px;
     padding: 15px;
     margin: 10px;
@@ -18,6 +18,7 @@
     -webkit-box-shadow: 20px 18px 9px -15px rgba(163,161,163,1);
     -moz-box-shadow: 20px 18px 9px -15px rgba(163,161,163,1);
     box-shadow: 20px 18px 9px -15px rgba(163,161,163,1);
+    border: #313131 solid 2px;
 }
 
 .ImgConteiner{
@@ -28,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 60%;
     overflow: hidden;
 }
 
@@ -53,7 +54,7 @@ p{
 }
 
 .imgPerson{
-    width: 80px;
+    width: 100px;
     margin: 0px;
     display: flex;
     justify-content: center;
