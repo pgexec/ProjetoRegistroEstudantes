@@ -13,7 +13,7 @@ function Cards({estudantes, FunctionExcluir})
                       
                     <Card key={index} nome={estudante.nome} descricao = {estudante.descricao} id={estudante.id}  curso= {estudante.curso}ExcluirEstudante={FunctionExcluir}></Card>
                 )
-                )) : ("Não tem estudante")}  
+                )) : ("Não tem estudante no momento")}  
         </div>
     )
 }
